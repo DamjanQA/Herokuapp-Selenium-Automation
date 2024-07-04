@@ -1,8 +1,5 @@
 package Base;
 
-//Domaci za nedelju:
-//Prepraviti domaci od srede tako da ga uradite koristeci POM
-
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -32,12 +32,12 @@ public class FileUploadTest extends BaseTest {
         mainPage.clickOnFileUploadLink();
 
         fileUploadPage.getUploadFile().clear();
-        fileUploadPage.getUploadFile().sendKeys("C:\\Users\\FENIKS\\Desktop\\food.PNG");
+        fileUploadPage.getUploadFile().sendKeys(""); // add path here
         fileUploadPage.clickOnSubmitButton();
 
         // da li se prikazuje dobar uplodovani fajl
         Assert.assertTrue(fileUploadPage.getUploadedFile().isDisplayed());
-        Assert.assertEquals(fileUploadPage.getUploadedFile().getText(), "food.PNG");
+        Assert.assertEquals(fileUploadPage.getUploadedFile().getText(), ""); // file name
 
         //da li smo dobili dobru poruku
         Assert.assertEquals(fileUploadPage.getDisplayMessage().getText(), "File Uploaded!");
