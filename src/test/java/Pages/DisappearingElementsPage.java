@@ -28,7 +28,7 @@ public class DisappearingElementsPage {
             System.out.println(e);
         }
 
-        // assertujemo pre refresha
+        // checks before getting refreshed
         if (galleryIsDisplayed == false) {
             Assert.assertFalse(galleryIsDisplayed);
             System.out.println("\nGallery element nije prikazan pre refresha");
@@ -56,11 +56,11 @@ public class DisappearingElementsPage {
             if (galleryIsDisplayed == false) {
                 Assert.assertFalse(galleryIsDisplayed);
                 System.out.println("\nGallery element nije prikazan posle refresha");
-                // ponavlja se sve dok ne bude true
+                // repeats until true
             } else {
                 Assert.assertTrue(galleryIsDisplayed);
                 System.out.println("\nGallery element je prikazan posle refresha");
-                // ovo treba da bude poslednji message u konzoli
+                // this should be the last msg displayed in console
             }
         } while (galleryIsDisplayed == false);
     }

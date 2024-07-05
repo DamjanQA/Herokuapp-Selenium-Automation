@@ -13,7 +13,7 @@ public class FileUploadTest extends BaseTest {
 
         String expectedURL = "https://the-internet.herokuapp.com/upload";
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
-        // da li smo na pravoj stranici
+        // makes sure we're on the right page
 
     }
 
@@ -35,11 +35,11 @@ public class FileUploadTest extends BaseTest {
         fileUploadPage.getUploadFile().sendKeys(""); // add path here
         fileUploadPage.clickOnSubmitButton();
 
-        // da li se prikazuje dobar uplodovani fajl
+        // is the right file displayed
         Assert.assertTrue(fileUploadPage.getUploadedFile().isDisplayed());
         Assert.assertEquals(fileUploadPage.getUploadedFile().getText(), ""); // file name
 
-        //da li smo dobili dobru poruku
+        // is the right msg displayed
         Assert.assertEquals(fileUploadPage.getDisplayMessage().getText(), "File Uploaded!");
     }
 

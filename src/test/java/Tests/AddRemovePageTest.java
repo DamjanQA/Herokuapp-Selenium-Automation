@@ -11,7 +11,7 @@ public class AddRemovePageTest extends BaseTest {
 
         mainPage.clickOnAddRemoveLink();
 
-        // assertujemo da smo na dobroj adresi
+        // checks whether we are on the right address
         String expectedURL = "https://the-internet.herokuapp.com/add_remove_elements/";
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
     }
@@ -21,7 +21,7 @@ public class AddRemovePageTest extends BaseTest {
 
         mainPage.clickOnAddRemoveLink();
 
-        // assertujemo da je prikazano Add Element dugme
+        // is the add element button shown
         Assert.assertTrue(addRemovePage.getAddElementButton().isDisplayed());
     }
 
@@ -30,7 +30,7 @@ public class AddRemovePageTest extends BaseTest {
 
         mainPage.clickOnAddRemoveLink();
 
-        // proveravamo da li možemo da dodamo npr. 3 elementa (delete)
+        // can we add 3 elements (delete)
         addRemovePage.addThreeElements();
         Assert.assertEquals(addRemovePage.getDeleteButtons().size(), 3);
     }
@@ -42,10 +42,10 @@ public class AddRemovePageTest extends BaseTest {
 
         addRemovePage.addThreeElements();
 
-        // testiramo da li funkcioniše delete dugme (brišemo 1 element)
+        // tests whether we can delete 1 element (delete button)
         addRemovePage.clickOnDeleteButtons();
 
-        // assertujemo da sada ima 2 umesto 3 dugimića (delete)
+        // we assert that there are now 2 delete buttons instead of the original 3
         Assert.assertEquals(addRemovePage.getDeleteButtons().size(), 2);
     }
 }
