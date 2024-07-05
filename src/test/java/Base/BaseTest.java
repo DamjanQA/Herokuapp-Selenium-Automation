@@ -3,10 +3,7 @@ package Base;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.time.Duration;
 
 public class BaseTest {
@@ -34,7 +31,7 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void PageSetup() {
+    public void pageSetup() {
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
     }

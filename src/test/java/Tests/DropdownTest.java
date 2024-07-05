@@ -13,7 +13,7 @@ public class DropdownTest extends BaseTest {
 
         String expectedURL = "https://the-internet.herokuapp.com/dropdown";
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
-        // da li smo na pravoj stranici
+        // are we on the right page
     }
 
     @Test(priority = 20)
@@ -22,9 +22,9 @@ public class DropdownTest extends BaseTest {
         mainPage.clickOnDropdownPageLink();
 
         Assert.assertTrue(dropdownPage.getDropdown().isDisplayed());
-        // da li postoji meni
+        // checks whether there's actually a menu
 
-        // assertujemo default poruku pre odabira
+        // asserts default msg before selection
         Assert.assertEquals(dropdownPage.getDropdownMenuSelection().getText(), "Please select an option");
     }
 

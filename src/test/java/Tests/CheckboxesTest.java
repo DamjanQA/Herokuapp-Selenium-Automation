@@ -30,21 +30,21 @@ public class CheckboxesTest extends BaseTest {
 
         mainPage.clickOnCheckboxesLink();
 
-        // proveravamo da li su tickovani boxevi
+        // check whether boxes are ticked
         boolean checkbox1InitialState = checkboxesPage.getCheckboxes().get(0).isSelected();
         boolean checkbox2InitialState = checkboxesPage.getCheckboxes().get(1).isSelected();
 
-        // klikćemo prvi ako je untickovan
+        // clicks first one if unticked
         if (checkbox1InitialState == false) {
             checkboxesPage.getCheckboxes().get(0).click();
         }
 
-        // klikćemo drugi ako je untickovan
+        // clicks second one if unticked
         if (checkbox2InitialState == false) {
             checkboxesPage.getCheckboxes().get(1).click();
         }
 
-        // assertujemo da su oba selektovana (tj. checkovana)
+        // asserts that both boxes are ticked (selected)
         Assert.assertTrue(checkboxesPage.getCheckboxes().get(0).isSelected());
         Assert.assertTrue(checkboxesPage.getCheckboxes().get(1).isSelected());
     }
