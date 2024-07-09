@@ -11,7 +11,7 @@ public class CheckboxesTest extends BaseTest {
 
         mainPage.clickOnCheckboxesLink();
 
-        // assertujemo da smo na dobroj adresi
+        // asserting whether we are on the right address
         String expectedURL = "https://the-internet.herokuapp.com/checkboxes";
         Assert.assertEquals(driver.getCurrentUrl(), expectedURL);
     }
@@ -22,7 +22,7 @@ public class CheckboxesTest extends BaseTest {
         mainPage.clickOnCheckboxesLink();
 
         Assert.assertEquals(checkboxesPage.getCheckboxes().size(), 2);
-        // assertujemo da li su oba elementa prisutna
+        // asserting whether both elements are present
     }
 
     @Test(priority = 30)
@@ -54,21 +54,21 @@ public class CheckboxesTest extends BaseTest {
 
         mainPage.clickOnCheckboxesLink();
 
-        // proveravamo da li su tickovani boxevi
+        // checking whether the boxes are ticked
         boolean checkbox1InitialState = checkboxesPage.getCheckboxes().get(0).isSelected();
         boolean checkbox2InitialState = checkboxesPage.getCheckboxes().get(1).isSelected();
 
-        // klikćemo prvi ako je untickovan
+        // clicks first one if unticked
         if (checkbox1InitialState == true) {
             checkboxesPage.getCheckboxes().get(0).click();
         }
 
-        // klikćemo drugi ako je untickovan
+        // clicks second one if unticked
         if (checkbox2InitialState == true) {
             checkboxesPage.getCheckboxes().get(1).click();
         }
 
-        // assertujemo da su oba selektovana (tj. unchekovana)
+        // asserting whether both are selected
         Assert.assertFalse(checkboxesPage.getCheckboxes().get(0).isSelected());
         Assert.assertFalse(checkboxesPage.getCheckboxes().get(1).isSelected());
     }
